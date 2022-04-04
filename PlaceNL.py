@@ -718,7 +718,7 @@ async def main():
     i = 0
     for username, password in args.user:
         tasks.append(runner.reddit_client(
-            username, password, "http://localhost:" + str(9050 + i * 2)))
+            username, password, "http://localhost:" + str(6050 + i * 2)))
         i += 1
 
     await asyncio.gather(*tasks)
