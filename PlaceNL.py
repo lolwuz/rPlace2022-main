@@ -714,9 +714,12 @@ async def main():
     # Wait a few seconds before starting reddit clients to make sure C&C data has downloaded
     await asyncio.sleep(5)
 
+    # add port for every tor proxy
+    i = 0
     for username, password in args.user:
         tasks.append(runner.reddit_client(
-            username, password, "http://localhost:16379"))
+            username, password, "http://localhost:" + (9050 + i * 2)))
+        i += 1
 
     await asyncio.gather(*tasks)
 
