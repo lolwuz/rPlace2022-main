@@ -1,0 +1,7 @@
+.idea
+*.egg-info
+build
+dist
+.eggs
+__pycache__
+run_bot.sh
